@@ -61,6 +61,7 @@ public class TypeUtils extends AsyncTask<String, Void, PokemonType> {
                 }
                 damageRelations.put(TypeUtils.relationNames[i], typeNameList);
             }
+
             List<Pokemon> pokemons = new ArrayList<>();
             JSONArray pokemonsArray = jsonObj.getJSONArray("pokemon");
             int iterations = pokemonsArray.length() < 5 ? pokemonsArray.length() : 5;
@@ -80,4 +81,23 @@ public class TypeUtils extends AsyncTask<String, Void, PokemonType> {
 
     public static String[] relationNames = {"double_damage_from", "double_damage_to", "half_damage_from",
             "half_damage_to", "no_damage_from", "no_damage_to"};
+
+    public static String damageRelationText(String originalText) {
+        switch (originalText) {
+            case "double_damage_from":
+                return "RECIBE DOBLE DAÑO";
+            case "double_damage_to":
+                return "HACE DOBLE DAÑO";
+            case "half_damage_from":
+                return "RECIBE MENOR DAÑO";
+            case "half_damage_to":
+                return "HACE MENOR DAÑO";
+            case "no_damage_from":
+                return "NO RECIBE DAÑO";
+            case "no_damage_to":
+                return "NO HACE DAÑO";
+            default:
+                return "";
+        }
+    }
 }

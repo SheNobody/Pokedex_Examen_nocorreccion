@@ -27,22 +27,4 @@ public class PokemonType {
         return pokemons;
     }
 
-    public String damageRelationText(String originalText) {
-        switch (originalText) {
-            case "double_damage_from":
-                return "RECIBE DOBLE DAÑO";
-            case "double_damage_to":
-                return "HACE DOBLE DAÑO";
-            case "half_damage_from":
-                return "RECIBE MENOR DAÑO";
-            case "half_damage_to":
-                return "HACE MENOR DAÑO";
-            case "no_damage_from":
-                return "NO RECIBE DAÑO";
-            case "no_damage_to":
-                return "NO HACE DAÑO";
-            default:
-                return "";
-        }
-    }
 }
